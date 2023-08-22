@@ -1,0 +1,144 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body > div{
+    width: 90%;
+    margin: auto;
+}
+
+h1{
+    letter-spacing: 1px;
+    font-weight: 600;
+    color: #666;
+}
+
+.logoutBtnSection{
+    display: flex;
+    justify-content: start;
+    gap: 30px;
+    margin: 20px auto;
+}
+
+.logoutBtnSection > button:nth-child(1){
+    border: none;
+    background-color: #007bff;
+    color: white;
+    padding: 5px 10px;
+    font-size: 18px;
+}
+
+.logoutBtnSection > button:nth-child(1):hover{
+    border: none;
+    background-color: #0550a0;
+    color: white;
+    padding: 5px 10px;
+    font-size: 18px;
+}
+
+.logoutBtnSection > button:nth-child(2){
+    border: none;
+    background-color: white;
+    border: 1px solid gray;
+    color: #333;
+    padding: 5px 15px;
+    font-size: 18px;
+}
+
+.logoutBtnSection > button:nth-child(2):hover{
+    padding: 4px 20px;
+    border: none;
+    background-color: red;
+    color: white;
+    border: none;
+}
+
+
+.filterSection{
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: 30px 0px;
+    background-color: rgb(221, 219, 219);
+    padding: 20px;
+}
+
+.filterSection > input , .filterSection > select{
+    width: 20%;
+    padding: 8px;
+    text-align: center;
+    letter-spacing: 1px;
+    outline: none;
+    border: 1px solid black;
+}
+
+
+table {
+    width: 90%;
+    text-align: center;
+}
+
+td, th{
+    text-align: center;
+}
+
+table > thead {
+    background-color: rgb(248, 241, 241);
+    text-align: center;
+}
+th{
+    padding: 10px;
+    font-weight: bold;
+}
+
+td{
+    padding: 5px;
+}
+
+
+
+
+.editBttns > button{
+    padding: 4px 20px;
+    border: none;
+    border: 1px solid gray;
+    background-color: transparent;
+    margin: auto 20px;
+    font-weight: bold;
+}
+
+.editBttns > button:hover{
+    padding: 4px 20px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border: none;
+}
+
+
+.paginationBtns{
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    margin: 50px auto;
+}
+
+.paginationBtns > button{
+    padding: 4px 20px;
+    border: none;
+    border: 1px solid gray;
+    background-color: transparent;
+    margin: auto 20px;
+    font-weight: bold;
+}
+
+.paginationBtns > button:hover{
+    padding: 4px 20px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border: none;
+}

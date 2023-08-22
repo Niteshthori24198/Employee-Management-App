@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="./Dashboard.css">
+</head>
+
+<body>
+    <div>
+
+        <h1>Employee Mangement Software</h1>
+
+        <div class="logoutBtnSection">
+            <button type="button" data-toggle="modal" data-target="#addModal" data-whatever="@mdo">Add Employee</button>
+            <button onclick="logoutBtn()">Logout</button>
+        </div>
+
+        <div class="filterSection">
+
+            <input type="text" placeholder="search here" id="searchName" name="FirstName">
+
+            <select id="filterDepartment" name="Department">
+                <option value="">Filter By Department</option>
+                <option value="Tech">Tech</option>
+                <option value="Marketing">Marketing</option>
+                <option value="Operations">Operations</option>
+            </select>
+            
+            <select id="filterSalary" name="sortbysalary">
+                <option value="">Filter By Salary</option>
+                <option value="asc">Low To High</option>
+                <option value="desc">High To Low</option>
+            </select>
+            
+
+        </div>
+
+        <div>
+
+            <table border="1" cellspacing="0">
+
+                <thead>
+
+                    <tr>
+
+                        <th>No.</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Email</th>
+                        <th>Salary</th>
+                        <th>Department</th>
+                        <th>Actions</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody id="tbodyEmployee">
+
+                    <!-- append employee here -->
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+        <div class="paginationBtns">
+            <button onclick="changePageNumber(-1)">Prev</button>
+            <span id="pageNumberSpan">1</span>
+            <button onclick="changePageNumber(1)">Next</button>
+        </div>
+
+    </div>
+
+
+
+
+
+    <!-- Add Employee -->
+
+    <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Add Employee</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form onsubmit="handleAddEmployee(event)">
+
+                        <div class="form-group">
+                            <label for="recipient-name" class="col-form-label">First Name:</label>
+                            <input type="text" class="form-control" id="FirstName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message-text" class="col-form-label">Last Name:</label>
+                            <input type="text" class="form-control" id="LastName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message-text" class="col-form-label">Email:</label>
+                            <input type="email" class="form-control" id="Email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message-text" class="col-form-label">Department:</label>
+                            <select id="Department" class="form-control" required>
+                                <option value="">Choose Department</option>
+                                <option value="Tech">Tech</option>
+                                <option value="Marketing">Marketing</option>
+                                <option value="Operations">Operations</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message-text" class="col-form-label">Salary:</label>
+                            <input type="number" class="form-control" id="Salary" required>
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal"
+                                id="closeAddFormBtn">Close</button>
+                            <button type="submit" class="btn btn-primary">Add Employee</button>
+                        </div>
+
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Employee -->
+
+
+    <!-- Edit Employee -->
+
+    <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Edit Employee</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form onsubmit="handleEditEmployeeData(event)">
+
+                        <div class="form-group">
+                            <label for="recipient-name" class="col-form-label">First Name:</label>
+                            <input type="text" class="form-control" id="FirstName_E" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message-text" class="col-form-label">Last Name:</label>
+                            <input type="text" class="form-control" id="LastName_E" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message-text" class="col-form-label">Email:</label>
+                            <input type="email" class="form-control" id="Email_E" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message-text" class="col-form-label">Department:</label>
+                            <select id="Department_E" class="form-control" required>
+                                <option value="">Choose Department</option>
+                                <option value="Tech">Tech</option>
+                                <option value="Marketing">Marketing</option>
+                                <option value="Operations">Operations</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message-text" class="col-form-label">Salary:</label>
+                            <input type="number" class="form-control" id="Salary_E" required>
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal"
+                                id="closeEditFormBtn">Close</button>
+                            <button type="submit" class="btn btn-primary">Update</button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Employee -->
+
+
+</body>
+
+</html>
+
+
+
+<script src="./Dashboard.js"></script>

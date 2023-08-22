@@ -1,0 +1,51 @@
+
+h2{
+    text-align: center;
+    margin: 40px;
+    margin-left: 120px;
+}
+
+.nav-tabs{
+    display: flex;
+    justify-content: center;
+}
+
+.nav-tabs > li{
+    display: flex;
+    justify-content: center;
+    width: 20%;
+}
+
+.nav-tabs > li a{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+
+
+#home, #menu1 {
+    margin: auto;
+    margin-left: 400px;
+    margin-top: 50px;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; */
+}
+
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    gap: 20px;
+    margin-top: 40px;
+}
+
+form input {
+    padding: 5px;
+    outline: none;
+    border: 1px solid gray;
+    border-radius: 10px;
+}

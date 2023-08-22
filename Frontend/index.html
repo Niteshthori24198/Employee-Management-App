@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Employee Mangement</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>Employee Management</h2>
+
+        <ul class="nav nav-tabs">
+            <li class="active"><a data-toggle="tab" href="#home">Login</a></li>
+            <li><a data-toggle="tab" href="#menu1">Signup</a></li>
+        </ul>
+
+        <div class="tab-content">
+
+            <div id="home" class="tab-pane fade in active">
+                <h3>Login</h3>
+
+                <form onsubmit="handleLogin(event)">
+
+                    <input type="email" placeholder="Email Address" id="email_L" required>
+                    <input type="password" placeholder="Password" id="password_L" required>
+
+                    <input type="submit" value="Login">
+
+                </form>
+
+            </div>
+
+            <div id="menu1" class="tab-pane fade">
+                <h3>Signup</h3>
+
+                <form onsubmit="handlSignup(event)">
+
+                    <input type="email" placeholder="Email Address" id="email_R" required>
+                    <input type="password" placeholder="Password" id="password_R" required>
+                    <input type="password" placeholder="Confirm Password" id="con_password_R" required>
+
+                    <input type="submit" value="Login">
+
+                </form>
+               
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+
+<script src="./index.js"></script>
